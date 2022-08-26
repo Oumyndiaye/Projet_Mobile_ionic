@@ -1,0 +1,25 @@
+<ion-header *ngFor="let info of informations">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+    <ion-item>Bonjour Mr {{info.nom}}{{info.prenom}}</ion-item>
+     <ion-item>{{info.email}}</ion-item>   
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list-header style="margin-left:100px;margin-bottom:20px"> Vos Livraisons </ion-list-header>
+  <ion-list *ngFor="let liv of livraisons">
+  <ion-item>
+    <ion-label class="label">
+      <h2>Livraisonn°{{liv.id}}</h2>
+      <ion-icon [routerLink]="['/detail-livraison']" name="eye-off-outline"></ion-icon>
+    </ion-label>
+  </ion-item>
+  <ion-item>
+  </ion-item>
+</ion-list>
+<ion-button routerLink="/login" style="margin-left: 270px;">Terminer</ion-button>
+</ion-content>

@@ -1,0 +1,76 @@
+
+    <ion-header
+    parallax
+    imageUrl="https://cdn.sanity.io/images/czqk28jt/prod_bk_ch/c613bf5e3a486ba400b64a5d5fca9e09d1c9870e-1184x600.jpg?w=1125&q=40&fit=max&auto=format"
+    height="350"
+    bgPosition="center">
+      <ion-toolbar>
+        <span class="menu">
+          <ion-buttons slot="start">
+            <ion-menu-button class="burger" style="color: black;"></ion-menu-button>
+          </ion-buttons>
+        </span>
+        <ion-title>
+          Brazil Burger
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="main">
+        <ion-segment  class="segment" value="all">
+          <ion-segment-button (click)="valid1()" value="all">
+            <ion-label>
+              <ion-icon class="icone" name="apps-outline"></ion-icon>
+            </ion-label>
+          </ion-segment-button>
+          <ion-segment-button  (click)="valid2()" value="favorites">
+            <ion-label>
+              <ion-icon class="icone" name="list-outline"></ion-icon>
+            </ion-label>
+          </ion-segment-button>
+        </ion-segment> 
+        <div>
+          <ion-list  class="liste"  *ngFor="let burger of burgers">
+            <ion-item>
+              <ion-avatar slot="start">
+                <img class="thumbnail" [src]="'data:image/PNG;base64,' + burger.image" alt="burger.nom">
+              </ion-avatar>
+              <ion-label class="labele">
+                <h2>{{burger.nom}}</h2>
+                <p>{{burger.prix}}</p>
+              </ion-label>
+              <ion-button color="warning"><ion-icon name="basket-outline"></ion-icon></ion-button>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div *ngIf="list==false">
+          <ion-list  class="liste"  *ngFor="let burger of burgers">
+            <ion-item>
+              <ion-avatar slot="start">
+                <img class="thumbnail" [src]="'data:image/PNG;base64,' + burger.image" alt="burger.nom">
+              </ion-avatar>
+              <ion-label class="labele">
+                <h2>{{burger.nom}}</h2>
+                <p>{{burger.prix}}</p>
+              </ion-label>
+              <ion-button color="warning"><ion-icon name="basket-outline"></ion-icon></ion-button>
+            </ion-item>
+          </ion-list>
+        </div>
+        <div *ngIf="card==true">
+          <ion-card   *ngFor="let burger of burgers" >
+            <ion-card-content>
+              <img class="thumbnail" [src]="'data:image/PNG;base64,' + burger.image" alt="burger.nom">
+            </ion-card-content>
+            <ion-item href="#" class="ion-activated">
+              <ion-label>{{burger.nom}}</ion-label>
+              <ion-button fill="outline" slot="end">{{burger.prix}}</ion-button>
+            </ion-item>
+          </ion-card>
+        </div>
+      </div>
+    </ion-content>
+  
+      
+    
+

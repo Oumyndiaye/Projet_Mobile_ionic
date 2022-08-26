@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/livraisons"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mes Commandes</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-list *ngFor="let commande of commandes" >
+      <ion-item>
+        <ion-label class="label">
+          <h2>Commande n°{{commande.id}}</h2>
+          <h2>Client:{{commande.client.nom}} {{commande.client.prenom}}</h2>
+          <h2>Telephone du Client:{{commande.client.numeroTelephone}}</h2>
+        </ion-label>
+      </ion-item>
+      </ion-list>
+</ion-content>
